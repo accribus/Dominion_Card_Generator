@@ -100,12 +100,20 @@ function resultGenerator(b, i, s, p, d){
 	var daCardsResult = [];
 	
 	
-	var supply = [];		
-	var resultStr = "";
+	var supply = [];
+
+var resultStrBase = "";	
+var resultStrIntr = "";
+var resultStrSS = "";
+var resultStrPros = "";
+var resultStrDA = "";
+
+	
 	
 	
 	if(baseCards > 0){
 		
+		var resultStrBase = "";
 		counter = 1;
 		while(counter <= baseCards){
 
@@ -117,7 +125,14 @@ function resultGenerator(b, i, s, p, d){
 			
 				supply.push(newCard);
 				baseSetResult.push(newCard);
-				//resultStr = resultStr + "<br />" + newCard;
+				
+				if(counter < baseCards){
+				
+					resultStrBase = resultStrBase + newCard + ", ";
+				} else{
+				
+					resultStrBase = resultStrBase + newCard;
+				}
 				counter++;
 				
 			
@@ -125,11 +140,13 @@ function resultGenerator(b, i, s, p, d){
 		
 		}	
 
+		
 	}
 	
 	
 	
 	if(intrCards > 0){
+		
 		
 		counter = 1;
 		while(counter <= intrCards){
@@ -141,17 +158,28 @@ function resultGenerator(b, i, s, p, d){
 			
 				supply.push(newCard);
 				intrSetResult.push(newCard);
+				
+				if(counter < intrCards){
+	
+					resultStrIntr = resultStrIntr + newCard + ", ";
+				} else{
+	
+					resultStrIntr = resultStrIntr + newCard;
+				}
+				
+				
 				counter++;
 
 			
 			}		
 		
 		}	
-	
+
 		
 	}
 	
 	if(ssCards > 0){
+		
 		
 		counter = 1;
 		while(counter <= ssCards){
@@ -164,18 +192,30 @@ function resultGenerator(b, i, s, p, d){
 			
 				supply.push(newCard);
 				ssSetResult.push(newCard);
+				
+				if(counter < ssCards){
+	
+					resultStrSS = resultStrSS + newCard + ", ";
+				} else{
+	
+					resultStrSS = resultStrSS + newCard;
+				}
+				
 				counter++;
 
 				
 			
 			}		
 		
-		}	
+		}
+
+		
 
 	}
 		
 	
 	if(prosCards > 0){
+		
 		
 		counter = 1;
 		while(counter <= prosCards){
@@ -187,6 +227,15 @@ function resultGenerator(b, i, s, p, d){
 			
 				supply.push(newCard);
 				prosSetResult.push(newCard);
+				
+				if(counter < prosCards){
+	
+					resultStrPros = resultStrPros + newCard + ", ";
+				} else{
+	
+					resultStrPros = resultStrPros + newCard;
+				}
+				
 				counter++;
 				
 			
@@ -199,6 +248,7 @@ function resultGenerator(b, i, s, p, d){
 	
 	if(daCards > 0){
 
+		
 		counter = 1;
 		while(counter <= daCards){
 
@@ -209,6 +259,15 @@ function resultGenerator(b, i, s, p, d){
 			
 				supply.push(newCard);
 				daCardsResult.push(newCard);
+				
+				if(counter < daCards){
+	
+					resultStrDA = resultStrDA + newCard + ", ";
+				} else{
+	
+					resultStrDA = resultStrDA + newCard;
+				}
+				
 				counter++;				
 			
 			}		
@@ -217,7 +276,12 @@ function resultGenerator(b, i, s, p, d){
 
 	}
 	
-	alert("Supply after function: " + supply);
+	//alert("Supply after function: " + supply);
+	document.getElementById("baseArea").innerHTML = resultStrBase;
+	document.getElementById("intrArea").innerHTML = resultStrIntr;
+	document.getElementById("ssArea").innerHTML = resultStrSS;
+	document.getElementById("prosArea").innerHTML = resultStrPros;
+	document.getElementById("daArea").innerHTML = resultStrDA;
 	//alert(resultStr);
 	
 } //end function resultGenerator
@@ -231,7 +295,20 @@ function crazyTime_test(){alert("crazy time.");}
 function crazyTime(){
 
 	var all5Set = ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer","Courtyard", "Pawn", "Secret Chamber", "Great Hall", "Masquerade", "Shanty Town", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles", "Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf", "Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler", "Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights"];                                         
+	
+	var baseSet = ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer"];
+	var intrSet = ["Courtyard", "Pawn", "Secret Chamber", "Great Hall", "Masquerade", "Shanty Town", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles"];
+	var ssSet = ["Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf"];
+	var prosSet = ["Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler"];
+	var daSet = ["Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights", "Bandit Camp"];                                         
+		
 	var supply = [];
+	
+	var resultStrBase = "";	
+	var resultStrIntr = "";
+	var resultStrSS = "";
+	var resultStrPros = "";
+	var resultStrDA = "";
 	
 	counter = 1;
 	
@@ -243,6 +320,24 @@ function crazyTime(){
 		if(!inArray(newCard,supply)){
 		
 			supply.push(newCard);
+			
+			if(inArray(newCard,baseSet)){
+			
+				resultStrBase += newCard + ", ";
+			} else if(inArray(newCard,intrSet)){
+			
+				resultStrIntr += newCard + ", ";
+			} else if(inArray(newCard,ssSet)){
+			
+				resultStrSS += newCard + ", ";
+			} else if(inArray(newCard,prosSet)){
+			
+				resultStrPros += newCard + ", ";
+			} else if(inArray(newCard,daSet)){
+			
+				resultStrDA += newCard + ", ";
+			}
+			
 			counter++;
 			
 		
@@ -250,6 +345,15 @@ function crazyTime(){
 	
 	}	
 	
+	
+	var randSupply = resultStrBase + resultStrIntr + resultStrSS + resultStrPros + resultStrDA;
+	//pop(randSupply);
+	document.getElementById("randArea").innerHTML = randSupply;
+	document.getElementById("baseArea").innerHTML = resultStrBase;
+	document.getElementById("intrArea").innerHTML = resultStrIntr;
+	document.getElementById("ssArea").innerHTML = resultStrSS;
+	document.getElementById("prosArea").innerHTML = resultStrPros;
+	document.getElementById("daArea").innerHTML = resultStrDA;
 	alert("Supply: " + supply);
 	
 }
