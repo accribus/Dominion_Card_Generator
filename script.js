@@ -1,10 +1,10 @@
-
+/*
 	var baseCardsGlobal = 0;
 	var intrCardsGlobal = 0;
 	var ssCardsGlobal = 0;
 	var prosCardsGlobal = 0;
 	var daCardsGlobal = 0;
-
+*/
 
 function getCardRatios(){
 
@@ -17,6 +17,7 @@ function getCardRatios(){
 	var ssCards = 0;
 	var prosCards = 0;
 	var daCards = 0;
+
 	
 	if(document.getElementById("baseField").value > 0){
 	
@@ -45,11 +46,9 @@ function getCardRatios(){
 	}
 	
 	var cardTotal = parseInt(baseCards) + parseInt(intrCards) + parseInt(ssCards) + parseInt(prosCards) + parseInt(daCards);
-	//alert("Total: " + cardTotal);	
-	//alert("base: " + baseCards + " intr: " + intrCards + " ss: " + ssCards + " pros: " + prosCards + " da: " + daCards);
 	
 	
-	/*
+	
 	if (cardTotal != 10){
 	
 		alert("Please enter valid numerical values only (field values from 1-10), totalling 10 cards.  Currently, card total is: " + cardTotal);
@@ -59,15 +58,14 @@ function getCardRatios(){
 		var prosCards = 0;
 		var daCards = 0;
 	
-	}*/
+	}
 	
-	//alert("base: " +baseCards +" intr: " +intrCards +" ss: " +ssCards +" pros: " +prosCards +" da: " +daCards);
 	
 	resultGenerator(baseCards, intrCards, ssCards, prosCards, daCards); //sends values to next function resultGenerator
 }
 
-function inArray(cardName,arr)
-{
+function inArray(cardName,arr){
+
     var arrLength=arr.length;
 	
     for(var i=0; i < arrLength; i++){
@@ -93,17 +91,6 @@ function resultGenerator(b, i, s, p, d){
 	var ssSet = ["Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf"];
 	var prosSet = ["Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler"];
 	var daSet = ["Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights", "Bandit Camp"];                                         
-
-	/**************************TEST CODE****************************************/
-	//alert(baseCards)
-	//var testArrStr = toString(baseSet);
-	//alert(baseSet[0]);
-	//alert(prosSet);
-	/*alert(toString(intrSet));
-	alert(toString(ssSet));
-	alert(toString(prosSet));
-	alert(toString(daSet));*/
-	/***************************************************************************/
 	
 	
 	var baseSetResult = [];
@@ -113,7 +100,9 @@ function resultGenerator(b, i, s, p, d){
 	var daCardsResult = [];
 	
 	
-	var supply = [];
+	var supply = [];		
+	var resultStr = "";
+	
 	
 	if(baseCards > 0){
 		
@@ -127,6 +116,8 @@ function resultGenerator(b, i, s, p, d){
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
+				baseSetResult.push(newCard);
+				//resultStr = resultStr + "<br />" + newCard;
 				counter++;
 				
 			
@@ -149,6 +140,7 @@ function resultGenerator(b, i, s, p, d){
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
+				intrSetResult.push(newCard);
 				counter++;
 
 			
@@ -171,6 +163,7 @@ function resultGenerator(b, i, s, p, d){
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
+				ssSetResult.push(newCard);
 				counter++;
 
 				
@@ -180,9 +173,7 @@ function resultGenerator(b, i, s, p, d){
 		}	
 
 	}
-	
-	
-	
+		
 	
 	if(prosCards > 0){
 		
@@ -195,6 +186,7 @@ function resultGenerator(b, i, s, p, d){
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
+				prosSetResult.push(newCard);
 				counter++;
 				
 			
@@ -216,6 +208,7 @@ function resultGenerator(b, i, s, p, d){
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
+				daCardsResult.push(newCard);
 				counter++;				
 			
 			}		
@@ -225,8 +218,9 @@ function resultGenerator(b, i, s, p, d){
 	}
 	
 	alert("Supply after function: " + supply);
+	//alert(resultStr);
 	
-}
+} //end function resultGenerator
 	
 
 
@@ -256,7 +250,7 @@ function crazyTime(){
 	
 	}	
 	
-	alert("Supply after loop: " + supply);
+	alert("Supply: " + supply);
 	
 }
 
