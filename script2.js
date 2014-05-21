@@ -242,7 +242,7 @@ function resultGenerator(b, i, s, p, d){
 		//alert("enter if");
 		counter = 1;
 		while(counter <= daCards){
-		//for(var i = 1; i <= daCards; i++){
+		for(var i = 1; i <= daCards; i++){
 		
 			//alert("enter for, baseSet: " + baseSet.length + supply);
 			//alert("enter for, baseSet: " + baseSet.length);
@@ -267,11 +267,11 @@ function resultGenerator(b, i, s, p, d){
 		alert(supply.length);
 	}
 	
-}
+	alert(supply);
 	
 
 
-
+}
 
 /*
 
@@ -309,3 +309,4 @@ function crazyTime(){
 }
 */
 
+}
