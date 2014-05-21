@@ -271,15 +271,17 @@ function resultGenerator(b, i, s, p, d){
 	
 
 
+function crazyTime_test(){alert("crazy time.");}
 
 
-/*
 
 function crazyTime(){
 
+	alert("crazy time...");
 
 	var all5Set = ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer","Courtyard", "Pawn", "Secret Chamber", "Great Hall", "Masquerade", "Shanty Town", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles", "Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf", "Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler", "Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights"];                                         
-
+	var supply = [];
+	
 	counter = 1;
 	
 	while(counter <= 10){
@@ -287,8 +289,8 @@ function crazyTime(){
 	
 		//alert("enter for, baseSet: " + baseSet.length + supply);
 		//alert("enter for, baseSet: " + baseSet.length);
-		cardIndex = Math.floor(Math.random()*daSet.length)
-		newCard = daSet[cardIndex];
+		cardIndex = Math.floor(Math.random()*all5Set.length)
+		newCard = all5Set[cardIndex];
 		//alert("New card: " + newCard);
 		//alert(baseSet[cardIndex]);
 		
@@ -304,8 +306,9 @@ function crazyTime(){
 	
 	}	
 	
-
+	alert("Supply after loop: " + supply);
+	alert(supply.length);
 
 }
-*/
+
 
