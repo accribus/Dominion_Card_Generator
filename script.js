@@ -49,7 +49,7 @@ function getCardRatios(){
 	//alert("base: " + baseCards + " intr: " + intrCards + " ss: " + ssCards + " pros: " + prosCards + " da: " + daCards);
 	
 	
-	
+	/*
 	if (cardTotal != 10){
 	
 		alert("Please enter valid numerical values only (field values from 1-10), totalling 10 cards.  Currently, card total is: " + cardTotal);
@@ -59,7 +59,7 @@ function getCardRatios(){
 		var prosCards = 0;
 		var daCards = 0;
 	
-	}
+	}*/
 	
 	//alert("base: " +baseCards +" intr: " +intrCards +" ss: " +ssCards +" pros: " +prosCards +" da: " +daCards);
 	
@@ -92,7 +92,7 @@ function resultGenerator(b, i, s, p, d){
 	var intrSet = ["Courtyard", "Pawn", "Secret Chamber", "Great Hall", "Masquerade", "Shanty Town", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles"];
 	var ssSet = ["Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf"];
 	var prosSet = ["Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler"];
-	var daSet = ["Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights"];                                         
+	var daSet = ["Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights", "Bandit Camp"];                                         
 
 	/**************************TEST CODE****************************************/
 	//alert(baseCards)
@@ -116,156 +116,115 @@ function resultGenerator(b, i, s, p, d){
 	var supply = [];
 	
 	if(baseCards > 0){
-		//alert("enter if");
+		
 		counter = 1;
 		while(counter <= baseCards){
-		//for(var i = 1; i <= baseCards; i++){
-		
-			//alert("enter for, baseSet: " + baseSet.length + supply);
-			//alert("enter for, baseSet: " + baseSet.length);
+
 			cardIndex = Math.floor(Math.random()*baseSet.length)
 			newCard = baseSet[cardIndex];
-			//alert("New card: " + newCard);
-			//alert(baseSet[cardIndex]);
+
 			
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
 				counter++;
-				//alert("card placed in supply: " + baseSet[i]);
-				//alert("card placed in supply: " + newCard);
 				
 			
 			}		
 		
 		}	
-	
-		alert("Supply after loop: " + supply);
-		alert(supply.length);
-		
+
 	}
 	
 	
 	
 	if(intrCards > 0){
-		//alert("enter if");
+		
 		counter = 1;
 		while(counter <= intrCards){
-		//for(var i = 1; i <= intrCards; i++){
 		
-			//alert("enter for, baseSet: " + baseSet.length + supply);
-			//alert("enter for, baseSet: " + baseSet.length);
 			cardIndex = Math.floor(Math.random()*intrSet.length)
 			newCard = intrSet[cardIndex];
-			//alert("New card: " + newCard);
-			//alert(baseSet[cardIndex]);
 			
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
 				counter++;
-				//alert("card placed in supply: " + baseSet[i]);
-				//alert("card placed in supply: " + newCard);
-				
+
 			
 			}		
 		
 		}	
 	
-		alert("Supply after loop: " + supply);
-		alert(supply.length);
 		
 	}
 	
 	if(ssCards > 0){
-		//alert("enter if");
+		
 		counter = 1;
 		while(counter <= ssCards){
-		//for(var i = 1; i <= ssCards; i++){
-		
-			//alert("enter for, baseSet: " + baseSet.length + supply);
-			//alert("enter for, baseSet: " + baseSet.length);
+
 			cardIndex = Math.floor(Math.random()*ssSet.length)
 			newCard = ssSet[cardIndex];
-			//alert("New card: " + newCard);
-			//alert(baseSet[cardIndex]);
+
 			
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
 				counter++;
-				//alert("card placed in supply: " + baseSet[i]);
-				//alert("card placed in supply: " + newCard);
+
 				
 			
 			}		
 		
 		}	
-	
-		alert("Supply after loop: " + supply);
-		alert(supply.length);
+
 	}
 	
 	
 	
 	
 	if(prosCards > 0){
-		//alert("enter if");
+		
 		counter = 1;
 		while(counter <= prosCards){
-		//for(var i = 1; i <= prosCards; i++){
-		
-			//alert("enter for, baseSet: " + baseSet.length + supply);
-			//alert("enter for, baseSet: " + baseSet.length);
+
 			cardIndex = Math.floor(Math.random()*prosSet.length)
 			newCard = prosSet[cardIndex];
-			//alert("New card: " + newCard);
-			//alert(baseSet[cardIndex]);
-			
+
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
 				counter++;
-				//alert("card placed in supply: " + baseSet[i]);
-				//alert("card placed in supply: " + newCard);
 				
 			
 			}		
 		
 		}	
 	
-		alert("Supply after loop: " + supply);
-		alert(supply.length);
+
 	}
 	
 	if(daCards > 0){
-		//alert("enter if");
+
 		counter = 1;
 		while(counter <= daCards){
-		//for(var i = 1; i <= daCards; i++){
-		
-			//alert("enter for, baseSet: " + baseSet.length + supply);
-			//alert("enter for, baseSet: " + baseSet.length);
+
 			cardIndex = Math.floor(Math.random()*daSet.length)
 			newCard = daSet[cardIndex];
-			//alert("New card: " + newCard);
-			//alert(baseSet[cardIndex]);
 			
 			if(!inArray(newCard,supply)){
 			
 				supply.push(newCard);
-				counter++;
-				//alert("card placed in supply: " + baseSet[i]);
-				//alert("card placed in supply: " + newCard);
-				
+				counter++;				
 			
 			}		
 		
 		}	
-	
-		alert("Supply after loop: " + supply);
-		alert(supply.length);
+
 	}
+	
+	alert("Supply after function: " + supply);
 	
 }
 	
@@ -277,29 +236,20 @@ function crazyTime_test(){alert("crazy time.");}
 
 function crazyTime(){
 
-	alert("crazy time...");
-
 	var all5Set = ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer","Courtyard", "Pawn", "Secret Chamber", "Great Hall", "Masquerade", "Shanty Town", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles", "Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf", "Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler", "Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights"];                                         
 	var supply = [];
 	
 	counter = 1;
 	
 	while(counter <= 10){
-	//for(var i = 1; i <= daCards; i++){
-	
-		//alert("enter for, baseSet: " + baseSet.length + supply);
-		//alert("enter for, baseSet: " + baseSet.length);
+
 		cardIndex = Math.floor(Math.random()*all5Set.length)
 		newCard = all5Set[cardIndex];
-		//alert("New card: " + newCard);
-		//alert(baseSet[cardIndex]);
-		
+
 		if(!inArray(newCard,supply)){
 		
 			supply.push(newCard);
 			counter++;
-			//alert("card placed in supply: " + baseSet[i]);
-			//alert("card placed in supply: " + newCard);
 			
 		
 		}		
@@ -307,8 +257,7 @@ function crazyTime(){
 	}	
 	
 	alert("Supply after loop: " + supply);
-	alert(supply.length);
-
+	
 }
 
 
