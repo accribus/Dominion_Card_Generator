@@ -129,7 +129,7 @@ var resultStrDA = "";
 				if(counter < baseCards){
 				
 					resultStrBase = resultStrBase + newCard + ", ";
-				} else{
+				} else if(counter == baseCards){
 				
 					resultStrBase = resultStrBase + newCard;
 				}
@@ -139,7 +139,8 @@ var resultStrDA = "";
 			}		
 		
 		}	
-
+		
+		alert(resultStrBase);
 		
 	}
 	
@@ -284,6 +285,9 @@ var resultStrDA = "";
 	document.getElementById("daArea").innerHTML = resultStrDA;
 	//alert(resultStr);
 	
+	var choiceSupply = resultStrBase + ", " + resultStrIntr + ", " + resultStrSS + ", " + resultStrPros + ", " + resultStrDA;
+	document.getElementById("listArea").innerHTML = choiceSupply.substring(0,choiceSupply.length);
+	
 } //end function resultGenerator
 	
 
@@ -347,14 +351,23 @@ function crazyTime(){
 	
 	
 	var randSupply = resultStrBase + resultStrIntr + resultStrSS + resultStrPros + resultStrDA;
-	//pop(randSupply);
-	document.getElementById("randArea").innerHTML = randSupply;
-	document.getElementById("baseArea").innerHTML = resultStrBase;
-	document.getElementById("intrArea").innerHTML = resultStrIntr;
-	document.getElementById("ssArea").innerHTML = resultStrSS;
-	document.getElementById("prosArea").innerHTML = resultStrPros;
-	document.getElementById("daArea").innerHTML = resultStrDA;
-	alert("Supply: " + supply);
+	
+	resultStrBase = resultStrBase.trim();
+	resultStrIntr = resultStrIntr.trim();	
+	resultStrSS = resultStrSS.trim();
+	resultStrPros = resultStrPros.trim();
+	resultStrDA = resultStrDA.trim();
+	
+	randSupply = randSupply.trim();
+	
+	document.getElementById("baseArea").innerHTML = resultStrBase.substring(0,resultStrBase.length-1);
+	document.getElementById("intrArea").innerHTML = resultStrIntr.substring(0,resultStrIntr.length-1);
+	document.getElementById("ssArea").innerHTML = resultStrSS.substring(0,resultStrSS.length-1);
+	document.getElementById("prosArea").innerHTML = resultStrPros.substring(0,resultStrPros.length-1);
+	document.getElementById("daArea").innerHTML = resultStrDA.substring(0,resultStrDA.length-1);
+	
+	document.getElementById("listArea").innerHTML = randSupply.substring(0,randSupply.length-1);
+	//alert("Supply: " + supply);
 	
 }
 
