@@ -102,11 +102,11 @@ function resultGenerator(b, i, s, p, d){
 	
 	var supply = [];
 
-var resultStrBase = "";	
-var resultStrIntr = "";
-var resultStrSS = "";
-var resultStrPros = "";
-var resultStrDA = "";
+	var resultStrBase = "";	
+	var resultStrIntr = "";
+	var resultStrSS = "";
+	var resultStrPros = "";
+	var resultStrDA = "";
 
 	
 	
@@ -286,7 +286,9 @@ var resultStrDA = "";
 	//alert(resultStr);
 	
 	var choiceSupply = resultStrBase + ", " + resultStrIntr + ", " + resultStrSS + ", " + resultStrPros + ", " + resultStrDA;
-	document.getElementById("listArea").innerHTML = choiceSupply.substring(0,choiceSupply.length);
+	//test code below
+	//document.getElementById("listArea").innerHTML = choiceSupply.substring(0,choiceSupply.length);
+	//document.getElementById("listArea").innerHTML = resultStrBase;
 	
 } //end function resultGenerator
 	
