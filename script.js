@@ -78,7 +78,7 @@ function inArray(cardName,arr){
 function resultGenerator(b, i, s, p, d){
 
 	//alert("enter resultGenerator");
-	document.getElementById("testDiv").style.display = "none";
+	//document.getElementById("testDiv").style.display = "none";
 
 	var baseCards = b;
 	var intrCards = i;
@@ -136,12 +136,14 @@ function resultGenerator(b, i, s, p, d){
 				}
 				counter++;
 				
+				
 			
 			}		
 		
-		}	
+		}
+
+		//alert(resultStrBase);
 		
-		alert(resultStrBase);
 		
 	}
 	
@@ -177,7 +179,6 @@ function resultGenerator(b, i, s, p, d){
 		
 		}	
 
-		
 	}
 	
 	if(ssCards > 0){
@@ -278,18 +279,48 @@ function resultGenerator(b, i, s, p, d){
 
 	}
 	
-	//alert("Supply after function: " + supply);
+	
 	document.getElementById("baseArea").innerHTML = resultStrBase;
 	document.getElementById("intrArea").innerHTML = resultStrIntr;
 	document.getElementById("ssArea").innerHTML = resultStrSS;
 	document.getElementById("prosArea").innerHTML = resultStrPros;
 	document.getElementById("daArea").innerHTML = resultStrDA;
-	//alert(resultStr);
+
+	if(resultStrBase.length > 0){
 	
-	var choiceSupply = resultStrBase + ", " + resultStrIntr + ", " + resultStrSS + ", " + resultStrPros + ", " + resultStrDA;
-	//test code below
-	//document.getElementById("listArea").innerHTML = choiceSupply.substring(0,choiceSupply.length);
-	//document.getElementById("listArea").innerHTML = resultStrBase;
+		resultStrBase += ", ";
+	}
+	if(resultStrIntr.length > 0){
+	
+		resultStrIntr += ", ";
+	}
+	if(resultStrSS.length > 0){
+	
+		resultStrSS += ", ";
+	}
+	if(resultStrPros.length > 0){
+	
+		resultStrPros += ", ";
+	}
+	if(resultStrDA.length > 0){
+	
+		resultStrDA += ", ";
+	}
+	
+	var choiceSupply = resultStrBase + resultStrIntr + resultStrSS + resultStrPros + resultStrDA;
+	
+	var lastCharLocation = choiceSupply.length - 2; //location of the comma (there is a whitespace at the end of choiceSupply)
+	var evilComma = choiceSupply.charAt(lastCharLocation);
+
+	if(choiceSupply.charAt(lastCharLocation) == evilComma){
+	
+		//alert("comma found at: " + lastCharLocation + " last char: " + evilComma + " string: " + choiceSupply);
+		//choiceSupply.trim();
+		choiceSupply = choiceSupply.substring(0,lastCharLocation);
+	
+	}
+	
+	document.getElementById("listArea").innerHTML = choiceSupply;
 	
 } //end function resultGenerator
 	
@@ -298,7 +329,6 @@ function resultGenerator(b, i, s, p, d){
 function crazyTime(){
 
 	document.getElementById("testDiv").style.display = "block";
-	//style.display = "block";
 	
 	var all5Set = ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer","Courtyard", "Pawn", "Secret Chamber", "Great Hall", "Masquerade", "Shanty Town", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles", "Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf", "Loan", "Trade Route", "Watchtower", "Bishop", "Monument", "Quarry", "Talisman", "Worker's Village", "City", "Contraband", "Counting House", "Mint", "Mountebank", "Rabble", "Royal Seal", "Vault", "Venture", "Goons", "Grand Market", "Hoard", "Bank", "Expand", "Forge", "King's Court", "Peddler", "Hermit/Madman", "Urchin/Merc.", "Poor House", "Beggar", "Squire", "Vagrant", "Forager", "Market Square", "Sage", "Storeroom", "Armory", "Death Cart", "Feodum", "Fortress", "Ironmonger", "Marauder", "Procession", "Rats", "Scavenger", "Wandering Minstrel", "Band of Misfits", "Catacombs", "Count", "Counterfeit", "Cultist", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rebuild", "Rogue", "Altar", "Hunting Grounds", "Knights"];                                         
 	
