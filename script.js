@@ -1,10 +1,3 @@
-/*
-	var baseCardsGlobal = 0;
-	var intrCardsGlobal = 0;
-	var ssCardsGlobal = 0;
-	var prosCardsGlobal = 0;
-	var daCardsGlobal = 0;
-*/
 
 function getCardRatios(){
 
@@ -77,8 +70,6 @@ function inArray(cardName,arr){
 
 function resultGenerator(b, i, s, p, d){
 
-	//alert("enter resultGenerator");
-	//document.getElementById("testDiv").style.display = "none";
 
 	var baseCards = b;
 	var intrCards = i;
@@ -142,8 +133,6 @@ function resultGenerator(b, i, s, p, d){
 		
 		}
 
-		//alert(resultStrBase);
-		
 		
 	}
 	
@@ -204,9 +193,7 @@ function resultGenerator(b, i, s, p, d){
 					resultStrSS = resultStrSS + newCard;
 				}
 				
-				counter++;
-
-				
+				counter++;				
 			
 			}		
 		
@@ -239,8 +226,7 @@ function resultGenerator(b, i, s, p, d){
 					resultStrPros = resultStrPros + newCard;
 				}
 				
-				counter++;
-				
+				counter++;				
 			
 			}		
 		
@@ -271,7 +257,7 @@ function resultGenerator(b, i, s, p, d){
 					resultStrDA = resultStrDA + newCard;
 				}
 				
-				counter++;				
+				counter++;			
 			
 			}		
 		
@@ -309,13 +295,11 @@ function resultGenerator(b, i, s, p, d){
 	
 	var choiceSupply = resultStrBase + resultStrIntr + resultStrSS + resultStrPros + resultStrDA;
 	
-	var lastCharLocation = choiceSupply.length - 2; //location of the comma (there is a whitespace at the end of choiceSupply)
+	var lastCharLocation = choiceSupply.length - 2; //location of the comma (there is a white-space at the end of choiceSupply)
 	var evilComma = choiceSupply.charAt(lastCharLocation);
 
 	if(choiceSupply.charAt(lastCharLocation) == evilComma){
-	
-		//alert("comma found at: " + lastCharLocation + " last char: " + evilComma + " string: " + choiceSupply);
-		//choiceSupply.trim();
+
 		choiceSupply = choiceSupply.substring(0,lastCharLocation);
 	
 	}
@@ -350,7 +334,7 @@ function crazyTime(){
 	
 	while(counter <= 10){
 
-		cardIndex = Math.floor(Math.random()*all5Set.length)
+		cardIndex = Math.floor(Math.random() * all5Set.length)
 		newCard = all5Set[cardIndex];
 
 		if(!inArray(newCard,supply)){
@@ -399,8 +383,7 @@ function crazyTime(){
 	document.getElementById("daArea").innerHTML = resultStrDA.substring(0,resultStrDA.length-1);
 	
 	document.getElementById("listArea").innerHTML = randSupply.substring(0,randSupply.length-1);
-	//alert("Supply: " + supply);
-	
+		
 }
 
 
